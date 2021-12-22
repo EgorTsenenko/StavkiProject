@@ -43,6 +43,7 @@ class PostsController < ApplicationController
     end
   end
 
+
   private def post_params   #Описываем какие параметры разрешено использовать в Post
     params.require(:post).permit(:title, :body)
   end
