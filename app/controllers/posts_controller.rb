@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    unless @post
+      return render "#{Rails .root}/public/404.html" unless
+    end
     @post = Post.find(params[:id])
   end
 
