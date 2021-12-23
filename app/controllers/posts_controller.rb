@@ -43,6 +43,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def changeLeague
+    @league=League.new
+    @league = "140"
+  end
+
 
   private def post_params   #Описываем какие параметры разрешено использовать в Post
     params.require(:post).permit(:title, :body)

@@ -3,7 +3,7 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
-url = URI("https://v3.football.api-sports.io/leagues?name=la liga")
+url = URI("https://v3.football.api-sports.io/leagues")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -14,6 +14,12 @@ request["x-rapidapi-host"] = 'v3.football.api-sports.io'
 request["x-rapidapi-key"] = '21156322e71ca970ba5b42583049c570'
 
 response = http.request(request)
-puts arr = JSON.parse(response.read_body)
-#ar = eval(arr["response"][0].to_s)
-#puts ar["league"]["name"]
+arr = JSON.parse(response.read_body)
+
+ar = eval(arr["response"].to_s)
+ar.map do |x|
+  p x["league"]
+end
+#ar["league"]["name"].each do |x|
+#puts x
+#end
