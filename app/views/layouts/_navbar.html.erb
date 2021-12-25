@@ -1,0 +1,16 @@
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <span class="my-0 mr-md-auto font-weight-bold">
+      <%=link_to "PrognosesOnMatches", home_path %></span>
+   <!-- <nav class="my-2 my-md-0 mr-md-3">   -->
+    <span class="p-2 text-dark"><%= link_to "Добавление статьи", new_post_path %></span>
+      <span class="p-2 text-dark"><%= link_to "О нас", about_path %></span>
+
+
+    <!-- </nav> -->
+    <%- if @current_user  %>
+      <%=@current_user.email %>
+      <span class="p-2 text-dark"><%= link_to "Выйти", auth_url, method: delete %></span>
+      <%-else %>
+    <span class="p-2 text-dark"><%= link_to "Вход", auth_url %></span>
+      <% end %>
+  </div>

@@ -1,9 +1,10 @@
 <h1><%= @post.title %></h1>
-<p><%=@post.body %></p>
+<p class ="show_text "><%=@post.body %></p>
 <hr>
+<% if @current_user  %>
 <%=link_to "Редактировать", edit_post_path(@post), :class => 'btn btn-warning' %>
 <%=link_to "Удалить пост", post_path(@post),method: :delete, data: {confirm: "Хотите удалить статью?"}, :class => 'btn btn-danger' %>
-
+<% end %>
 <hr>
 
 <h2>Все комментарии</h2>

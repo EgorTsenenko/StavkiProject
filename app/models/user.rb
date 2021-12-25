@@ -2,6 +2,9 @@ class User < ApplicationRecord
   before_validation :normalize_name, on: :create
   after_validation :set_location, on: [:create,:update]
 
+  has_many :posts
+  has_secure_password
+
   def normalize_name
     self.name = name.downcase.titleize
   end

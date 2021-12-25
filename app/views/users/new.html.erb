@@ -1,0 +1,26 @@
+<h2>Регистрация</h2>
+<%=form_for @user, url:posts_path do |f| %>
+  <%if @user.errors.any? %>
+    <%@user.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%=msg %></div>
+    <%end %>
+  <%end %>
+  <div class = 'field'>
+    <%= f.label 'Логин ' %>
+    <%=f.text_field :email,type: :email %>
+  </div>
+
+  <div class = 'field' style="margin: 5px">
+    <%= f.label 'Пароль' %>
+    <%=f.text_field :password,type: :password %>
+  </div>
+  <div class = 'field'>
+    <%= f.label 'Подтверждение пароля' %>
+    <%=f.text_field :password,type: :password %>
+  </div>
+  <p style="margin: 5px">
+    <%=f.submit('Зарегистрироваться',{:class =>'btn btn-success', :stile=>"background"} )%>
+  </p>
+<%end %>
+
+<%= link_to 'Войти',auth_url%>
