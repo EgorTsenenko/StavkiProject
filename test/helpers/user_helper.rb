@@ -6,3 +6,11 @@ module UserHelper
     BCrypt::Password.create correct_password
   end
 end
+
+def wrong_email
+  'someWrong@example.com'
+end
+
+def wrong_password
+  'wrong_password'
+end
