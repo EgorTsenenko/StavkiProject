@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "123", except: [:index, :show]
 
+  #collection_select(:league, :name, League.all, :id, :changeLeague, prompt: true)
   def index  #Обработка главной страницы
     @post = Post.all
   end
@@ -32,7 +33,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-
   def create #Работа кнопки сохранить статью
     #render plain:params[:post].inspect  просто проверка
     @post = Post.new(post_params)
@@ -45,8 +45,9 @@ class PostsController < ApplicationController
   end
 
   def changeLeague(number)
-
     @league = number
+
+
   end
 
 
@@ -54,3 +55,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 end
+
+class League< ActiveRecord::Base
+  belongs_to :league
+end
+

@@ -22,7 +22,12 @@
   <h5><%= "Выберите день матча" %></h5>
   <%= date_field(:reservation, :arrival_date) %>
 </p>
-
+<label for="league_name"></label><select name="league[name]" id="league_name">
+  <option value="140" selected="selected">La Liga</option>
+  <option value="39">Premier League</option>
+  <option value="78">Bundesliga 1</option>
+</select>
+<br>
 <div id="wg-api-football-fixtures"
      data-host="v3.football.api-sports.io"
      data-refresh="60"
