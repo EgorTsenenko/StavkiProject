@@ -1,12 +1,12 @@
 <h2>Вход</h2>
-<%=form_for @user, url:auth_url do |f| %>
+<%=form_for @user, url: users_url do |f| %>
   <%if @user.errors.any? %>
     <%@user.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%=msg %></div>
     <%end %>
   <%end %>
   <div class = 'field' style="margin: 5px">
-    <%= f.label 'Логин ' %>
+    <%= f.label 'Email ' %>
     <%=f.text_field :email,type: :email  %>
   </div>
 

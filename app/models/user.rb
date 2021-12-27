@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   validates :email, presence:true, uniqueness: true
-  before_validation :normalize_name, on: :create
-  after_validation :set_location, on: [:create,:update]
+  validates :name, presence:true
+  # before_validation :normalize_name, on: :create
+  #after_validation :set_location, on: [:create,:update]
 
   has_many :posts
   has_secure_password

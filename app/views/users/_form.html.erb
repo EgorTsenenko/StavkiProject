@@ -1,0 +1,43 @@
+<%= form_with  model: @user do |f| %>
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :email %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.email_field :email, placeholder: 'E-mail', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :name %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :name, placeholder: 'Имя', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :password %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.password_field :password, placeholder: 'Пароль', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :password_confirmation %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.password_field :password_confirmation, placeholder: 'Повторите пароль', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+  <%= f.submit "Регистрация", class: 'btn btn-success btn-lg' %>
+<%end%>
+
+
