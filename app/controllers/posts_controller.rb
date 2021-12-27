@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   end
 
   def new   #Создаем статью
-    @post = Post.new;
+    @post = Post.new
+    changeLeague("140")
   end
 
   def show
@@ -41,6 +42,11 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def changeLeague(number)
+
+    @league = number
   end
 
 
