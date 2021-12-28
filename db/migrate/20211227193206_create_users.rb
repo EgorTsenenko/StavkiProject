@@ -7,5 +7,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    change_table :posts do |t|
+      t.belongs_to :user
+    end
   end
 end

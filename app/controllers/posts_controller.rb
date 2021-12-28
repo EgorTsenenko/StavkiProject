@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "123", except: [:index, :show]
+  #http_basic_authenticate_with name: "admin", password: "123", except: [:index, :show]
 
   before_action :set_post, only: [:show]
   before_action :authorise_user, only: %i[new create edit update destroy]
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def create #Работа кнопки сохранить статью
-    #render plain:params[:post].inspect  просто проверка
+    #render plain:params[:post].inspect
     @post = @current_user.posts.create(post_params)
     @post.save    #Сохраняем пост
     if @post.save

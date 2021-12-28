@@ -1,21 +1,5 @@
-<h2>Вход</h2>
-<%=form_for @user, url: users_url do |f| %>
-  <%if @user.errors.any? %>
-    <%@user.errors.full_messages.each do |msg| %>
-      <div class="alert alert-danger"><%=msg %></div>
-    <%end %>
-  <%end %>
-  <div class = 'field' style="margin: 5px">
-    <%= f.label 'Email ' %>
-    <%=f.text_field :email,type: :email  %>
-  </div>
+<%= provide :page_title, 'Вход' %>
 
-  <div class = 'field' >
-    <%= f.label 'Пароль' %>
-    <%=f.text_field :password,type: :password %>
-  </div>
-  <p style="margin: 5px">
-    <%=f.submit('Войти',{:class =>'btn btn-success', :stile=>"background" } )%>
-  </p>
-<%end %>
-<%= link_to 'Зарегистрироваться',users_url%>
+<h1 class="mb-4">Вход</h1>
+<%=render 'auth/form' %>
+<%= link_to 'Регистрация',users_url%>

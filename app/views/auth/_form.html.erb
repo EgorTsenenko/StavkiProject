@@ -1,0 +1,26 @@
+<%= form_with  model: @user, url: users_url    do |f| %>
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :email %>
+    </div>
+
+    <div class="col-sm-5">
+      <%= f.email_field :email, placeholder: 'E-mail', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+
+  <div class="md-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :password %>
+    </div>
+
+    <div class="col-sm-5">
+      <%= f.password_field :password, placeholder: 'Пароль', class: 'form-control form-control-lg' %>
+    </div>
+  </div>
+
+  <%= f.submit "Войти", class: 'btn btn-success btn-lg' %>
+<%end%>
+
+
+

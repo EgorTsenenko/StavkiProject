@@ -1,4 +1,4 @@
-<%= form_with  model: @user do |f| %>
+<%= form_with  model: @user, url: auth_url do |f| %>
   <div class="md-3 row">
     <div class="col-sm-2 col-form-label">
       <%= f.label :email %>
